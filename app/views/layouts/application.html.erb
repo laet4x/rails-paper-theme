@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Myapp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--     Fonts and icons     -->
+   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+   <!-- CSS Files -->
+   <%= stylesheet_link_tag '/assets/css/bootstrap.min.css' %> 
+   <%= stylesheet_link_tag '/assets/css/paper-dashboard.css?v=2.0.0' %> 
+   <%= stylesheet_link_tag '/assets/demo/demo.css' %> 
+  </head>
+  <body class="">
+  <div class="wrapper ">
+    <%= render 'layouts/sidebar' %>
+      <div class="main-panel">
+        <%= render 'layouts/navbar' %>
+        <%= yield %>
+      </div>
+  </div>
+  </body>
+  <!--   Core JS Files   -->
+  <%= javascript_include_tag '/assets/js/core/jquery.min.js' %>
+  <%= javascript_include_tag '/assets/js/core/popper.min.js' %>
+  <%= javascript_include_tag '/assets/js/core/bootstrap.min.js' %>
+  <%= javascript_include_tag '/assets/js/plugins/perfect-scrollbar.jquery.min.jss' %>
+  <!--  Google Maps Plugin    -->
+  <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE' %>
+  <!-- Chart JS -->
+  <%= javascript_include_tag '/assets/js/plugins/chartjs.min.js' %>
+  <!--  Notifications Plugin    -->
+  <%= javascript_include_tag '/assets/js/plugins/bootstrap-notify.js' %>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <%= javascript_include_tag '/assets/js/paper-dashboard.min.js?v=2.0.0' %>
+  <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+  <%= javascript_include_tag '/assets/demo/demo.js' %>
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
+      demo.initChartsPages();
+    });
+  </script>
+
+</html>
