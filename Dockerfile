@@ -20,5 +20,6 @@ RUN bundle install
 RUN rake db:create
 RUN rake db:migrate
 RUN rake db:seed
+RUN rake assets:precompile
 
 COPY . /usr/src/app
